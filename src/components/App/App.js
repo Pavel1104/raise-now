@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import classes from './index.module.scss'
+import Header from '../Header'
+import StepIndicator from '../StepIndicator'
+import Form from '../Form'
 
 function App() {
   const [dataPostRequest, setDataPostRequest] = useState({})
@@ -26,24 +30,13 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {!!RequestErrorMessage && <p>{RequestErrorMessage}</p>}
-      <p>please welcome</p>
-
-      <div>
-        {showLoading &&
-          <span>Loading...</span>
-        }
-        <form onSubmit={saveProduct}>
-          <div>
-            <label>Product Name {dataPostRequest.mode}</label>
-          </div>
-          <button type="submit">
-            Save
-          </button>
-        </form>
+    <div className={classes.app}>
+      <div className={classes.sticked}>
+        <Header/>
+        <StepIndicator/>
       </div>
 
+      <Form/>
     </div>
   )
 }

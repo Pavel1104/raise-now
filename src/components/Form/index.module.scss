@@ -1,0 +1,194 @@
+$greyish-brown: #444444;
+$white: #f5f5f5;
+$brown-grey: #999999;
+$red: #db006b;
+$berry: #9e2058;
+$light-gray: #ddd;
+$brown-grey: #999;
+
+$radio-checked: "../../img/radio-checked.svg";
+$radio-unchecked: "../../img/radio-unchecked.svg";
+$settings-img: "../../img/settings.svg";
+
+.form {
+  border-radius: 4px;
+}
+
+.formContainer {
+  margin: 1rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.radioButtonContainer {
+  background-color: #ffffff;
+  margin: 1px 0;
+  padding: 40px 30px;
+}
+
+.title {
+  min-height: 32px;
+  width: 100%;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: $greyish-brown;
+}
+
+.description {
+  width: 100%;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $greyish-brown;
+  margin: 0;
+}
+
+.radioButtonBlock {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.radioButtonBlock:not(:first-child) {
+  margin-top: 20px;
+}
+
+.radio {
+  opacity: 0;
+  position: absolute;
+}
+
+.customRadio {
+  display: inline-block;
+  background-image: url($radio-unchecked);
+  background-repeat: no-repeat;
+  content: "";
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-position: 2px 2px;
+  border: 1px solid transparent;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked ~ .customRadio {
+  background-image: url($radio-checked);
+}
+
+input[type="radio"]:focus ~ .customRadio {
+  border-color: $red;
+}
+
+.label {
+  min-height: 26px;
+  line-height: 26px;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: $greyish-brown;
+  margin: 0;
+  padding-left: 5px;;
+  cursor: pointer;
+}
+
+.tip {
+  width: 100%;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.46;
+  letter-spacing: normal;
+  color: $brown-grey;
+  margin: 0;
+  padding-left: 33px;
+}
+
+.button {
+  width: 100%;
+  min-height: 38px;
+  border-radius: 4px;
+  border: solid 1px #db006b;
+  background-color: #db006b;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.31;
+  letter-spacing: normal;
+  color: #ffffff;
+  transition: all 0.4s ease-in-out;
+}
+
+.button:hover, .button:focus, .button:active {
+  border: solid 1px $berry;
+  background-color: $berry;
+}
+
+.button:focus {
+  outline-color: $red;
+}
+
+.button:disabled {
+  border: solid 1px $light-gray;
+  background-color: $light-gray;
+  color: $brown-grey;
+}
+
+@media(min-width: 544px) {
+  .button {
+    width: 95px;
+  }
+}
+
+@media(min-width: 670px) {
+  .formContainer {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .radioButtonContainer,
+  .container {
+      padding-left: 40px;
+      padding-right: 40px;
+  }
+
+  .form {
+    flex-basis: 540px;
+    margin-left: 60px;
+  }
+
+  .settingsImg {
+    flex-basis: 221px;
+    height: 429px;
+    min-width: 221px;
+    background-image: url($settings-img);
+    background-repeat: no-repeat;
+    display: block;
+  }
+}

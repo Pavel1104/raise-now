@@ -1,10 +1,13 @@
 import React from 'react'
 import classes from './index.module.scss'
+import {useProviderContext} from '../App/App'
 
 function StepIndicator() {
+  const {stepCount} = useProviderContext()
+
   return (
     <p className={classes.stepIndicator}>
-      Step 1 of 3
+      Step {stepCount} of 3
     </p>
   )
 }

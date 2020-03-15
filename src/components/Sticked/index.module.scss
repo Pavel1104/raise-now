@@ -1,9 +1,5 @@
-.app {
-  overflow: auto;
-  height: 100vh;
-}
-
 .sticked {
+  z-index: 1030;
   position: sticky;
   top: 0;
   right: 0;

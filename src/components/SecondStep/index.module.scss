@@ -6,8 +6,6 @@ $berry: #9e2058;
 $light-gray: #ddd;
 $brown-grey: #999;
 
-$radio-checked: "../../img/radio-checked.svg";
-$radio-unchecked: "../../img/radio-unchecked.svg";
 $settings-img: "../../img/settings.svg";
 
 .form {
@@ -27,10 +25,20 @@ $settings-img: "../../img/settings.svg";
   flex-wrap: wrap;
 }
 
-.radioButtonContainer {
-  background-color: #ffffff;
-  margin: 1px 0;
-  padding: 40px 30px;
+.container:not(:first-child) {
+  margin-top: 2px;
+}
+
+.container:nth-child(2) {
+  align-content: center;
+  .description {
+    font-size:20px;
+  };
+}
+
+.selected {
+  font-style: italic;
+  font-weight: bold;
 }
 
 .title {
@@ -57,73 +65,6 @@ $settings-img: "../../img/settings.svg";
   letter-spacing: normal;
   color: $greyish-brown;
   margin: 0;
-}
-
-.radioButtonBlock {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.radioButtonBlock:not(:first-child) {
-  margin-top: 20px;
-}
-
-.radio {
-  opacity: 0;
-  position: absolute;
-}
-
-.customRadio {
-  display: inline-block;
-  background-image: url($radio-unchecked);
-  background-repeat: no-repeat;
-  content: "";
-  width: 24px;
-  height: 24px;
-  border-radius: 100%;
-  background-position: 2px 2px;
-  border: 1px solid transparent;
-  transition: all 0.4s ease-in-out;
-  cursor: pointer;
-}
-
-input[type="radio"]:checked ~ .customRadio {
-  background-image: url($radio-checked);
-}
-
-input[type="radio"]:focus ~ .customRadio {
-  border-color: $red;
-}
-
-.label {
-  min-height: 26px;
-  line-height: 26px;
-  font-size: 16px;
-  font-family: Roboto;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  letter-spacing: normal;
-  color: $greyish-brown;
-  margin: 0;
-  padding-left: 5px;;
-  cursor: pointer;
-}
-
-.tip {
-  width: 100%;
-  font-family: Roboto;
-  font-size: 13px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.46;
-  letter-spacing: normal;
-  color: $brown-grey;
-  margin: 0;
-  padding-left: 33px;
 }
 
 .button {
@@ -157,6 +98,7 @@ input[type="radio"]:focus ~ .customRadio {
   border: solid 1px $light-gray;
   background-color: $light-gray;
   color: $brown-grey;
+  cursor: default;
 }
 
 @media(min-width: 544px) {
@@ -172,10 +114,14 @@ input[type="radio"]:focus ~ .customRadio {
     justify-content: center;
   }
 
-  .radioButtonContainer,
   .container {
       padding-left: 40px;
       padding-right: 40px;
+      // min-height: 110px;
+  }
+
+  .container:nth-child(2) {
+    min-height: 90px;
   }
 
   .form {

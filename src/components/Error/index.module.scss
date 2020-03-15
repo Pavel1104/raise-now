@@ -1,0 +1,23 @@
+$red: #db006b;
+$berry: #9e2058;
+
+.description {
+  font-size: 16p;;
+}
+
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  background-color: $red;
+  color: #fff;
+  border-radius: 4px;
+  border: 1px solid $berry;
+}
+
+@media(min-width:860px) {
+  .errorContainer {
+    max-width: 820px;
+    margin: 1rem auto 0 auto;
+  }
+}

@@ -14,12 +14,10 @@ function FirstStep() {
 
     delayedPostRequest(dataRequest)
     .then((result) => {
-      console.log(result)
       setLoading(false)
       setStepCount(prevStep => prevStep + 1)
     }).catch((error) => {
       setLoading(false)
-      console.warn(error)
       setError(error.toString())
       setDataRequest((prevData) => ({...prevData, mode: undefined}))
     })

@@ -1,15 +1,14 @@
-$red: #db006b;
 $berry: #9e2058;
 
 .description {
-  font-size: 16p;;
+  font-size: 16px;
 }
 
 .errorContainer {
   display: flex;
   justify-content: center;
   margin: 1rem;
-  background-color: $red;
+  background-color: red;
   color: #fff;
   border-radius: 4px;
   border: 1px solid $berry;

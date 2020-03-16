@@ -8,10 +8,13 @@ $brown-grey: #999;
 
 $radio-checked: "../../img/radio-checked.svg";
 $radio-unchecked: "../../img/radio-unchecked.svg";
+$radio-checked-focused: "../../img/radio-checked-focused.svg";
+$radio-unchecked-focused: "../../img/radio-unchecked-focused.svg";
 $settings-img: "../../img/settings.svg";
 
 .form {
   border-radius: 4px;
+  box-shadow: 0 60px 100px 0 rgba(158, 80, 80, 0.15);
 }
 
 .formContainer {
@@ -64,6 +67,7 @@ $settings-img: "../../img/settings.svg";
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  cursor: pointer;
 }
 
 .radioButtonBlock:not(:first-child) {
@@ -84,9 +88,7 @@ $settings-img: "../../img/settings.svg";
   height: 24px;
   border-radius: 100%;
   background-position: 2px 2px;
-  border: 1px solid transparent;
   transition: all 0.4s ease-in-out;
-  cursor: pointer;
 }
 
 input[type="radio"]:checked ~ .customRadio {
@@ -94,7 +96,11 @@ input[type="radio"]:checked ~ .customRadio {
 }
 
 input[type="radio"]:focus ~ .customRadio {
-  border-color: $red;
+  background-image: url($radio-unchecked-focused);
+}
+
+input[type="radio"]:checked:focus ~ .customRadio {
+  background-image: url($radio-checked-focused);
 }
 
 .label {
@@ -109,7 +115,6 @@ input[type="radio"]:focus ~ .customRadio {
   color: $greyish-brown;
   margin: 0;
   padding-left: 5px;;
-  cursor: pointer;
 }
 
 .tip {

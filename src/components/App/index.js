@@ -4,16 +4,16 @@ import Sticked from '../Sticked'
 import StepContainer from '../StepContainer'
 
 export const [Provider, useProviderContext] = constate(() => {
-  const [stepCount, setStepCount] = useState(1)
-  const [dataRequest, setDataRequest] = useState({})
+  const [step, setStep] = useState(1)
+  const [data, setData] = useState({})
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
 
   return {
-    stepCount,
-    setStepCount,
-    dataRequest,
-    setDataRequest,
+    step,
+    setStep,
+    data,
+    setData,
     loading,
     setLoading,
     error,

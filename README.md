@@ -8,8 +8,8 @@
 ### Package installation
 
 ```bash
-git clone https://github.com/Pavel1104/raisenow-asessment.git
-cd raisenow-asessment
+git clone https://github.com/Pavel1104/raisenow-assessment.git
+cd raisenow-assessment
 ```
 
 ```bash
